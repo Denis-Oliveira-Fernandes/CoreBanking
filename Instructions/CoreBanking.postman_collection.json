@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "a87b57d9-c16b-45d1-9d67-9ee1ae19ef6d",
+		"name": "CoreBanking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6962212"
+	},
+	"item": [
+		{
+			"name": "createCustomer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlLZXkiOiJlZTM5YTI1ZC1iZDM5LTQ4NWMtOTdlZi1iNDQ4ZjY2ZmZlN2UifQ.LkZ4E4vO080vPxznw72SEfGHRfgHWmalOqMDp2EJS4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test\",\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"testPassword1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5270/v1/CustomerAccount/createCustomer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5270",
+					"path": [
+						"v1",
+						"CustomerAccount",
+						"createCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBankAccount",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlLZXkiOiJlZTM5YTI1ZC1iZDM5LTQ4NWMtOTdlZi1iNDQ4ZjY2ZmZlN2UifQ.LkZ4E4vO080vPxznw72SEfGHRfgHWmalOqMDp2EJS4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": \"a781e389-a0fc-49f3-a1f2-3437dfd8c37a\",//Use the customerId created in the \"createCustomer\" step\r\n    \"balance\": 500.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5270/v1/CustomerAccount/createAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5270",
+					"path": [
+						"v1",
+						"CustomerAccount",
+						"createAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAsset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlLZXkiOiJlZTM5YTI1ZC1iZDM5LTQ4NWMtOTdlZi1iNDQ4ZjY2ZmZlN2UifQ.LkZ4E4vO080vPxznw72SEfGHRfgHWmalOqMDp2EJS4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"XYZ Stock\",\r\n    \"price\": 21.23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5270/v1/CustomerAccount/createAsset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5270",
+					"path": [
+						"v1",
+						"CustomerAccount",
+						"createAsset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateFinancialTransactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlLZXkiOiJlZTM5YTI1ZC1iZDM5LTQ4NWMtOTdlZi1iNDQ4ZjY2ZmZlN2UifQ.LkZ4E4vO080vPxznw72SEfGHRfgHWmalOqMDp2EJS4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 93760,//Use the accountId created in the \"CreateBankAccount\" step\r\n    \"type\": \"Sell\",//Buy/Sell\r\n    \"assetId\": 10528,//Use the assetId created in the \"CreateAsset\" step\r\n    \"quantity\": 11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5270/v1/CustomerAccount/createFinancialTransaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5270",
+					"path": [
+						"v1",
+						"CustomerAccount",
+						"createFinancialTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBalance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlLZXkiOiJlZTM5YTI1ZC1iZDM5LTQ4NWMtOTdlZi1iNDQ4ZjY2ZmZlN2UifQ.LkZ4E4vO080vPxznw72SEfGHRfgHWmalOqMDp2EJS4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5270/v1/CustomerAccount/getCustomerBalance?accountId=91845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5270",
+					"path": [
+						"v1",
+						"CustomerAccount",
+						"getCustomerBalance"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "91845",
+							"description": "Use the accountId created in the \"CreateBankAccount\" step"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFinancialTransactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlLZXkiOiJlZTM5YTI1ZC1iZDM5LTQ4NWMtOTdlZi1iNDQ4ZjY2ZmZlN2UifQ.LkZ4E4vO080vPxznw72SEfGHRfgHWmalOqMDp2EJS4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "ee39a25d-bd39-485c-97ef-b448f66ffe7e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5270/v1/CustomerAccount/getFinancialTransactions?accountId=93760",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5270",
+					"path": [
+						"v1",
+						"CustomerAccount",
+						"getFinancialTransactions"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "93760",
+							"description": "Use the accountId created in the \"CreateBankAccount\" step"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

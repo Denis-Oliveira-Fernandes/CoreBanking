@@ -1,0 +1,363 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.UnitTests\\CoreBanking.UnitTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj",
+        "projectName": "CoreBanking.Domain",
+        "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj",
+        "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.316\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Repository\\CoreBanking.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Repository\\CoreBanking.Repository.csproj",
+        "projectName": "CoreBanking.Repository",
+        "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Repository\\CoreBanking.Repository.csproj",
+        "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj": {
+                "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.316\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj",
+        "projectName": "CoreBanking.Service",
+        "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj",
+        "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj": {
+                "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj"
+              },
+              "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Repository\\CoreBanking.Repository.csproj": {
+                "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Repository\\CoreBanking.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.316\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.UnitTests\\CoreBanking.UnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.UnitTests\\CoreBanking.UnitTests.csproj",
+        "projectName": "CoreBanking.UnitTests",
+        "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.UnitTests\\CoreBanking.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.UnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj": {
+                "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj"
+              },
+              "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking\\CoreBanking.Controllers.csproj": {
+                "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking\\CoreBanking.Controllers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.316\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking\\CoreBanking.Controllers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking\\CoreBanking.Controllers.csproj",
+        "projectName": "CoreBanking.Controllers",
+        "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking\\CoreBanking.Controllers.csproj",
+        "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj": {
+                "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.316\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

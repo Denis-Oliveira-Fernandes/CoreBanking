@@ -1,0 +1,17 @@
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\bin\Debug\net6.0\CoreBanking.Service.deps.json
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\bin\Debug\net6.0\CoreBanking.Service.dll
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\bin\Debug\net6.0\CoreBanking.Service.pdb
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\bin\Debug\net6.0\CoreBanking.Domain.dll
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\bin\Debug\net6.0\CoreBanking.Domain.pdb
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\CoreBanking.Service.csproj.AssemblyReference.cache
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\CoreBanking.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\CoreBanking.Service.AssemblyInfoInputs.cache
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\CoreBanking.Service.AssemblyInfo.cs
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\CoreBanking.Service.csproj.CoreCompileInputs.cache
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\CoreBanking.Service.csproj.CopyComplete
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\CoreBanking.Service.dll
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\refint\CoreBanking.Service.dll
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\CoreBanking.Service.pdb
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\obj\Debug\net6.0\ref\CoreBanking.Service.dll
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\bin\Debug\net6.0\CoreBanking.Repository.dll
+C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Service\bin\Debug\net6.0\CoreBanking.Repository.pdb

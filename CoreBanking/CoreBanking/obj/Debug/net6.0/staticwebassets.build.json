@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "LfsfutQsvCCcvQrwffHWDVd/az/tGC1IrXCalVxFjFQ=",
+  "Source": "CoreBanking.Controllers",
+  "BasePath": "_content/CoreBanking.Controllers",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
