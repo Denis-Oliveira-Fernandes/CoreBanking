@@ -1,4 +1,5 @@
 1 - On SQL Server, run Script1 then Script2
+
 2 - Run the project
 3 - Import Postman Collection (Instructions folder)
 4 - Create Customer (Endpoint available in the Postman collection)
