@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj": {}
+    "C:\\Projects\\Dotnet\\portfolio\\Core2\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj": {
+    "C:\\Projects\\Dotnet\\portfolio\\Core2\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj",
+        "projectUniqueName": "C:\\Projects\\Dotnet\\portfolio\\Core2\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj",
         "projectName": "CoreBanking.Domain",
-        "projectPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj",
+        "projectPath": "C:\\Projects\\Dotnet\\portfolio\\Core2\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj",
         "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\obj\\",
+        "outputPath": "C:\\Projects\\Dotnet\\portfolio\\Core2\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,5 +1,7 @@
 ﻿using CoreBanking.Repository.Interfaces;
 using CoreBanking.Service;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Moq;
 
 namespace CoreBanking.UnitTests.Service
@@ -8,12 +10,20 @@ namespace CoreBanking.UnitTests.Service
     {
         private Mock<ICustomersRepository> _customersRepository;
         private CustomerAccountService _customerAccountService;
+        private ILogger<CustomerAccountService> _log;
 
         public CustomerAccountServiceUnitTests()
         {
+            var serviceCollection = new ServiceCollection()
+                                                        .AddLogging()
+                                                        .BuildServiceProvider();
+            var loggerFactory = serviceCollection.GetService<ILoggerFactory>();
+            _log = loggerFactory.CreateLogger<CustomerAccountService>();
+
             _customersRepository = new Mock<ICustomersRepository>();
             _customerAccountService = new CustomerAccountService(
-                    _customersRepository.Object
+                    _customersRepository.Object,
+                    _log
                 );
         }
 

@@ -12,20 +12,20 @@ namespace CoreBanking.Domain.Models.DTOs
         public decimal TotalValue { get; set; }
         public DateTime Date { get; set; }
 
-        public static List<FinancialTransactionsResponseDTO> Build(List<FinancialTransactions> financialTransactions)
+        public FinancialTransactionsResponseDTO()
         {
-            var financialTransactionsResponseDTO = financialTransactions.ConvertAll(x => new FinancialTransactionsResponseDTO
-            {
-                TransactionId = x.TransactionId,
-                AccountId = x.AccountId,
-                Type = x.Type,
-                AssetId = x.AssetId,
-                Quantity = x.Quantity,
-                TotalValue = x.TotalValue,
-                Date = x.Date
-            });
 
-            return financialTransactionsResponseDTO;
+        }
+
+        public FinancialTransactionsResponseDTO(FinancialTransactions financialTransactions)
+        {
+            TransactionId = financialTransactions.TransactionId;
+            AccountId = financialTransactions.AccountId;
+            Type = financialTransactions.Type;
+            AssetId = financialTransactions.AssetId;
+            Quantity = financialTransactions.Quantity;
+            TotalValue = financialTransactions.TotalValue;
+            Date = financialTransactions.Date;
         }
     }
 }

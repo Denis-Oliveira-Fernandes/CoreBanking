@@ -4,6 +4,7 @@ using CoreBanking.Domain.Models.DTOs;
 using CoreBanking.Repository.Interfaces;
 using CoreBanking.Service.Interfaces;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.Extensions.Logging;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 
@@ -12,66 +13,73 @@ namespace CoreBanking.Service
     public class CustomerAccountService : ICustomerAccountService
     {
         private ICustomersRepository _customersRepository;
+        private ILogger<CustomerAccountService> _log;
 
         public CustomerAccountService()
         {
         }
-        public CustomerAccountService(ICustomersRepository customersRepository)
+        public CustomerAccountService(ICustomersRepository customersRepository, ILogger<CustomerAccountService> log)
         {
             _customersRepository = customersRepository;
+            _log = log;
         }
         public async Task<CustomerBalanceResponseDTO> GetCustomerBalanceAsync(int accountId)
         {
-            BankAccounts bankAccount = _customersRepository.GetBalance(accountId);
-            if (bankAccount is null)
+            BankAccounts bankAccount = _customersRepository.GetBalance(accountId);//Get balance from database
+            if (bankAccount is null)//Validation - If nothing is found
                 return null;
 
-            CustomerBalanceResponseDTO customerBalanceResponseDTO = new CustomerBalanceResponseDTO
-            {
-                Balance = bankAccount.Balance
-            };
-
+            CustomerBalanceResponseDTO customerBalanceResponseDTO = new CustomerBalanceResponseDTO(bankAccount.Balance);
             return customerBalanceResponseDTO;
         }
 
         public async Task<FinancialTransactionsResponseDTO> CreateFinancialTransactionAsync(CreateFinancialTransaction createFinancialTransaction)
         {
-            // Create a random number generator.
-            Random random = new Random();
+            ValidatePayload(createFinancialTransaction);
 
+            // Organizing required data
+            Random random = new Random();// Create a random number generator.
             var asset = _customersRepository.GetAssetById(createFinancialTransaction.AssetId); // Get asset price
             if (asset is null)
                 return null;
 
+            _log.LogInformation($"Service: CustomerAccountService - Method: CreateFinancialTransactionAsync - Asset found!");
             decimal totalValue = asset.Price * createFinancialTransaction.Quantity;
 
-            // Generate a random 5-digit integer.
-            int transactionId = random.Next(10000, 99999);
+            BankAccounts bankAccount = _customersRepository.GetBalance(createFinancialTransaction.AccountId);
 
-            FinancialTransactions financialTransactions = new FinancialTransactions
+            // Funds validations
+            if (bankAccount is null)
+                return null;
+
+            if (createFinancialTransaction.Type.ToLower() == "buy" && totalValue > bankAccount.Balance)
+                throw new ApplicationException("Not enough funds.");
+
+            int transactionId = random.Next(10000, 99999); // Generate a random 5-digit integer.
+
+            // Converting/Adapting object
+            FinancialTransactions financialTransactions = new FinancialTransactions(createFinancialTransaction, transactionId, totalValue, DateTime.Now);
+
+            // Inserting in the database
+            _log.LogInformation($"Service: CustomerAccountService - Method: CreateFinancialTransactionAsync - Inserting transaction in the database");
+            bool createTransactions = _customersRepository.CreateTransactions(financialTransactions);
+
+            // If inserted successfully, update balance in BankAccount
+            if(createTransactions)
             {
-                TransactionId = transactionId,
-                AccountId = createFinancialTransaction.AccountId,
-                Type = createFinancialTransaction.Type,
-                AssetId = createFinancialTransaction.AssetId,
-                Quantity = createFinancialTransaction.Quantity,
-                TotalValue = totalValue,
-                Date = DateTime.Now
-            };
+                if (createFinancialTransaction.Type.ToLower() == "buy")
+                    bankAccount.Balance -= totalValue;
+                else
+                    bankAccount.Balance += totalValue;
 
-            _customersRepository.CreateTransactions(financialTransactions);
-
-            FinancialTransactionsResponseDTO createFinancialTransactionResponseDTO = new FinancialTransactionsResponseDTO
+                _customersRepository.UpdateBalance(bankAccount);
+            } else
             {
-                TransactionId = financialTransactions.TransactionId,
-                AccountId = financialTransactions.AccountId,
-                Type = financialTransactions.Type,
-                AssetId = financialTransactions.AssetId,
-                Quantity = financialTransactions.Quantity,
-                TotalValue = totalValue,
-                Date = financialTransactions.Date
-            };
+                return null;
+            }
 
+            // Converting/Adapting object to return it as response
+            FinancialTransactionsResponseDTO createFinancialTransactionResponseDTO = new FinancialTransactionsResponseDTO(financialTransactions);
             return createFinancialTransactionResponseDTO;
         }
 
@@ -83,45 +91,30 @@ namespace CoreBanking.Service
             // Generate a random 5-digit integer.
             int assetId = random.Next(10000, 99999);
 
-            FinancialAssets financialAssets = new FinancialAssets
-            {
-                AssetId = assetId,
-                Name = createAsset.Name,
-                Price = createAsset.Price
-            };
+            // Converting/Adapting object
+            FinancialAssets financialAssets = new FinancialAssets(createAsset, assetId);
 
+            // Inserting in the database
+            _log.LogInformation($"Service: CustomerAccountService - Method: CreateAssetAsync - Inserting asset in the database");
             _customersRepository.CreateAsset(financialAssets);//Add to database
 
-            CreateAssetResponseDTO createAssetResponseDTO = new CreateAssetResponseDTO
-            {
-                AssetId = financialAssets.AssetId,
-                Name = financialAssets.Name,
-                Price = financialAssets.Price
-            };
- 
+            // Converting/Adapting object to return it as response
+            CreateAssetResponseDTO createAssetResponseDTO = new CreateAssetResponseDTO(financialAssets);
             return createAssetResponseDTO;
         }
 
         public async Task<CreateCustomerResponseDTO> CreateCustomerAsync(CreateCustomer createCustomer)
         {
             Guid guid = Guid.NewGuid();
-            Customers customers = new Customers
-            {
-                CustomerId = guid.ToString(),
-                Email = createCustomer.Email,
-                Name = createCustomer.Name,
-                Password = HashPassword(createCustomer.Password)
-            };
-            
-            _customersRepository.AddCustomer(customers);//Database
+            // Converting/Adapting object
+            Customers customers = new Customers(createCustomer, guid.ToString(), HashPassword(createCustomer.Password));
 
-            CreateCustomerResponseDTO createCustomerResponseDTO = new CreateCustomerResponseDTO
-            {
-                CustomerId = customers.CustomerId,
-                Email = customers.Email,
-                Name = customers.Name,
-            };
-            
+            // Inserting in the database
+            _log.LogInformation($"Service: CustomerAccountService - Method: CreateCustomerAsync - Inserting new customer in the database");
+            _customersRepository.AddCustomer(customers);//SQL Server call to add data
+
+            // Converting/Adapting object to return it as response
+            CreateCustomerResponseDTO createCustomerResponseDTO = new CreateCustomerResponseDTO(customers);
             return createCustomerResponseDTO;
         }
 
@@ -133,24 +126,15 @@ namespace CoreBanking.Service
             // Generate a random 5-digit integer.
             int accountId = random.Next(10000, 99999);
 
-            BankAccounts bankAccount = new BankAccounts
-            {
-                AccountId = accountId,
-                CustomerId = createAccount.CustomerId,
-                Balance = createAccount.Balance
-            };
-            
+            // Converting/Adapting object
+            BankAccounts bankAccount = new BankAccounts(createAccount, accountId);
 
+            // Inserting in the database
+            _log.LogInformation($"Service: CustomerAccountService - Method: CreateAccountAsync - Inserting new account in the database");
             _customersRepository.CreateAccount(bankAccount);
 
-            CreateAccountResponseDTO createAccountResponseDTO = new CreateAccountResponseDTO
-            {
-                CustomerId = bankAccount.CustomerId,
-                AccountId = bankAccount.AccountId,
-                Balance = bankAccount.Balance
-            };
-            
-
+            // Converting/Adapting object to return it as response
+            CreateAccountResponseDTO createAccountResponseDTO = new CreateAccountResponseDTO(bankAccount);
             return createAccountResponseDTO;
         }
 
@@ -159,6 +143,7 @@ namespace CoreBanking.Service
             List<FinancialTransactionsResponseDTO> financialTransactionsResponseDTO = new List<FinancialTransactionsResponseDTO>();
             List<FinancialTransactions> financialTransactions = _customersRepository.GetFinancialTransactions(accountId);
 
+            _log.LogInformation($"Service: CustomerAccountService - Method: GetFinancialTransactionsAsync - financialTransactions found: {financialTransactions.Count()}");
             financialTransactionsResponseDTO = financialTransactions.ConvertAll(x => new FinancialTransactionsResponseDTO
             {
                 TransactionId = x.TransactionId,
@@ -204,6 +189,12 @@ namespace CoreBanking.Service
             var jti = tokenS.Claims.First(claim => claim.Type == "apiKey").Value;
 
             return jti == apiKey;
+        }
+
+        private void ValidatePayload(CreateFinancialTransaction createFinancialTransaction)
+        {
+            if (createFinancialTransaction.Type.ToLower() != "buy" && createFinancialTransaction.Type.ToLower() != "sell")
+                throw new ApplicationException("Invalid transaction type");
         }
     }
 }

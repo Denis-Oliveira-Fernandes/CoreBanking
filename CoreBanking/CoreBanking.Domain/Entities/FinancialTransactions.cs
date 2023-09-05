@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CoreBanking.Domain.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreBanking.Domain.Entities
@@ -18,6 +19,17 @@ namespace CoreBanking.Domain.Entities
         public FinancialTransactions()
         {
 
+        }
+
+        public FinancialTransactions(CreateFinancialTransaction createFinancialTransaction, int transactionId, decimal totalValue, DateTime date)
+        {
+            TransactionId = transactionId;
+            AccountId = createFinancialTransaction.AccountId;
+            Type = createFinancialTransaction.Type;
+            AssetId = createFinancialTransaction.AssetId;
+            Quantity = createFinancialTransaction.Quantity;
+            TotalValue = totalValue;
+            Date = date;
         }
     }
 }

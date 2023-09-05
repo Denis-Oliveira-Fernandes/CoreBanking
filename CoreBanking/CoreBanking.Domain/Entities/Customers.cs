@@ -17,5 +17,13 @@ namespace CoreBanking.Domain.Entities
         {
             
         }
+
+        public Customers(CreateCustomer createCustomer, string customerId, string password)
+        {
+            CustomerId = customerId;
+            Name = createCustomer.Name;
+            Email = createCustomer.Email;
+            Password = password;
+        }
     }
 }

@@ -6,6 +6,8 @@ using CoreBanking.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
+
 builder.Services.AddDbContext<CoreBankingContext>(options =>
 {
     options.UseSqlServer("name=ConnectionStrings:DefaultConnection",
@@ -17,8 +19,15 @@ builder.Services.AddDbContext<CoreBankingContext>(options =>
                 errorNumbersToAdd: new List<int>() { 19 });
         });
 });
+
 builder.Services.AddScoped<ICustomerAccountService, CustomerAccountService>();
 builder.Services.AddScoped<ICustomersRepository, CustomersRepository>();
+
+builder.Services.AddLogging(builder =>
+{
+    builder.AddConfiguration(configuration.GetSection("Logging"))
+           .AddConsole();
+});
 
 // Add services to the container.
 

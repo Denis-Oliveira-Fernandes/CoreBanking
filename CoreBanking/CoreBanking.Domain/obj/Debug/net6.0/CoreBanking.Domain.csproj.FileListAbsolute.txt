@@ -10,3 +10,15 @@ C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debu
 C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\refint\CoreBanking.Domain.dll
 C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\CoreBanking.Domain.pdb
 C:\Projects\Dotnet\portfolio\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\ref\CoreBanking.Domain.dll
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\bin\Debug\net6.0\CoreBanking.Domain.deps.json
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\bin\Debug\net6.0\CoreBanking.Domain.dll
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\bin\Debug\net6.0\CoreBanking.Domain.pdb
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\CoreBanking.Domain.csproj.AssemblyReference.cache
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\CoreBanking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\CoreBanking.Domain.AssemblyInfoInputs.cache
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\CoreBanking.Domain.AssemblyInfo.cs
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\CoreBanking.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\CoreBanking.Domain.dll
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\refint\CoreBanking.Domain.dll
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\CoreBanking.Domain.pdb
+C:\Projects\Dotnet\portfolio\Core2\CoreBanking\CoreBanking\CoreBanking.Domain\obj\Debug\net6.0\ref\CoreBanking.Domain.dll

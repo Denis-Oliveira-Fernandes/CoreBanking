@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O++Jl+5G1lp3CRqs3/eYWDdJbes0PpfCniO6WrgAJeJVtnTKirdCR3uOC4txOwerW+NnQN3DwRBWqaNB4Xt9ig==",
+  "dgSpecHash": "Q1greklw9dZyyE6gTcSDjZMDlp3pUIEfvF3p15Te7GfEyB/8iBJMhoxd8vGgzqAfHrFgsW1g8xy/yp0K4BrGGQ==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj",
+  "projectFilePath": "C:\\Projects\\Dotnet\\portfolio\\Core2\\CoreBanking\\CoreBanking\\CoreBanking.Service\\CoreBanking.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\denis\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

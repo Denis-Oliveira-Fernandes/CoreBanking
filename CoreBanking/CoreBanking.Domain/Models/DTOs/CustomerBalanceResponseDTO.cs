@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CoreBanking.Domain.Models.DTOs
+﻿namespace CoreBanking.Domain.Models.DTOs
 {
     public class CustomerBalanceResponseDTO
     {
@@ -12,6 +6,11 @@ namespace CoreBanking.Domain.Models.DTOs
 
         public CustomerBalanceResponseDTO()
         {
+        }
+
+        public CustomerBalanceResponseDTO(decimal balance)
+        {
+            Balance = balance;
         }
     }
 }

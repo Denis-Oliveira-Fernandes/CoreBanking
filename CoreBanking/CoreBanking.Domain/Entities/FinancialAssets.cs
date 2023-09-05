@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CoreBanking.Domain.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreBanking.Domain.Entities
@@ -14,6 +15,13 @@ namespace CoreBanking.Domain.Entities
         public FinancialAssets()
         {
 
+        }
+
+        public FinancialAssets(CreateAsset createAsset, int assetId)
+        {
+            AssetId = assetId;
+            Name = createAsset.Name;
+            Price = createAsset.Price;
         }
     }
 }

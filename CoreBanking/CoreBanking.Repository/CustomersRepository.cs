@@ -32,16 +32,24 @@ namespace CoreBanking.Repository
             _coreBankingContext.SaveChanges();
         }
 
-        public void CreateTransactions(FinancialTransactions financialTransactions)
+        public bool CreateTransactions(FinancialTransactions financialTransactions)
         {
             _coreBankingContext.FinancialTransactions.Add(financialTransactions);
             _coreBankingContext.SaveChanges();
+
+            return true;
         }
 
         public BankAccounts GetBalance(int accountId)
         {
             BankAccounts account = _coreBankingContext.BankAccounts.Where(_ => _.AccountId == accountId).FirstOrDefault();
             return account;
+        }
+
+        public void UpdateBalance(BankAccounts bankAccount)
+        {
+            _coreBankingContext.BankAccounts.Update(bankAccount);
+            _coreBankingContext.SaveChanges();
         }
 
         public List<FinancialTransactions> GetFinancialTransactions(int accountId)

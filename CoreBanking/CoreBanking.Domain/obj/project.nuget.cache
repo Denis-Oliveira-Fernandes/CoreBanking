@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MS4kn3aZ9T5QYoCLpdF+d/F/Dy6Ctzd1JhpXN3O8xlhtldwolEKKrPuNdyREGacTIyJtqEsFMxC1O44iJjEpYw==",
+  "dgSpecHash": "n6i3uEgsax5LqcfdDbMIWhYMYM3nGnxvMD0PA/81/JxTMKQnWnzMsa3JsLm/aCn/eKhklwENdLKuNClvPGi4dA==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\Dotnet\\portfolio\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj",
+  "projectFilePath": "C:\\Projects\\Dotnet\\portfolio\\Core2\\CoreBanking\\CoreBanking\\CoreBanking.Domain\\CoreBanking.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
